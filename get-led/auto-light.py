@@ -9,4 +9,4 @@ GPIO.setup(res, GPIO.IN)
 
 while True:
     
-    GPIO.output(led, GPIO.input(res))
+    GPIO.output(led, not GPIO.input(res))
