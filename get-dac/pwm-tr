@@ -1,0 +1,21 @@
+from pwm_dac import *
+from signal_generator import *
+import time
+
+
+amp = 3.2
+sig_freq = 10
+samp_freq = 1000
+
+if __name__ == "__main__":
+    try:
+        
+        dac = PWM_DAC(12, 2000, 3.2, True)
+
+        while True:
+            vol = float(3.2 * get_tr_wave_amp(sig_freq, time.time()))
+            dac.set_vol(vol)
+            wait_for_samp_per(samp_freq)
+
+    finally:
+        dac.deinit()
