@@ -34,7 +34,9 @@ class R2R_ADC:
                 return i * self.dynamic_range / 255
 
     def get_sc_voltage(self):
-        print("voltage", self.seq_count_adc())
+        vol = self.seq_count_adc()
+        print("voltage", vol)
+        return vol
 
     
 
